@@ -18,7 +18,9 @@ def create_app(config_class=Config):
 
     # Register blueprints
     from app.routes.auth_routes import auth_bp
+    from app.routes.task_routes import task_bp
     app.register_blueprint(auth_bp)
+    app.register_blueprint(task_bp)
 
     # Register error handlers
     from app.utils.error_handlers import register_error_handlers

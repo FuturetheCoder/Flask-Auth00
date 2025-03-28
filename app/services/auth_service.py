@@ -71,4 +71,14 @@ class AuthService:
             return {'message': 'Invalid email or password'}, 401
             
         except Exception as e:
-            return {'message': 'Login failed', 'error': str(e)}, 500 
+            return {'message': 'Login failed', 'error': str(e)}, 500
+
+    @staticmethod
+    def logout():
+        try:
+            # In a more complex implementation, you might want to blacklist the token
+            # For now, we'll just return a success message as the client should
+            # remove the token from their storage
+            return {'message': 'Logged out successfully'}, 200
+        except Exception as e:
+            return {'message': 'Logout failed', 'error': str(e)}, 500 
